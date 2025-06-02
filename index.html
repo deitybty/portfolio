@@ -18,6 +18,14 @@
       color: #333;
       line-height: 1.8;
     }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
     header {
       background: #005f73;
       color: white;
@@ -111,7 +119,6 @@
       font-size: 0.9em;
     }
 
-    /* Floating Chatbot UI */
     #chat-button {
       position: fixed;
       bottom: 20px;
@@ -174,126 +181,10 @@
       cursor: pointer;
       font-size: 0.9em;
     }
-
-    /* Mobile Responsive Styles */
-    @media (max-width: 768px) {
-      header {
-        padding: 40px 15px;
-      }
-      header h1 {
-        font-size: 2em;
-      }
-      header p {
-        font-size: 1em;
-      }
-      .contact {
-        font-size: 0.85em;
-        line-height: 1.6;
-      }
-      nav {
-        padding: 10px 5px;
-        gap: 8px;
-      }
-      nav a {
-        padding: 6px 10px;
-        font-size: 0.8em;
-      }
-      .container {
-        margin: 20px auto;
-        padding: 0 10px;
-      }
-      section {
-        margin-bottom: 40px;
-      }
-      h2 {
-        font-size: 1.4em;
-        padding-left: 12px;
-        margin-bottom: 15px;
-      }
-      .info-card {
-        padding: 20px;
-      }
-      ul li {
-        font-size: 0.95em;
-        margin-bottom: 6px;
-      }
-      footer {
-        padding: 25px 15px;
-        font-size: 0.85em;
-      }
-      #chat-button {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-        bottom: 15px;
-        right: 15px;
-      }
-      #chat-window {
-        bottom: 75px;
-        right: 10px;
-        width: calc(100vw - 20px);
-        height: 300px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.8em;
-      }
-      header p {
-        font-size: 0.95em;
-      }
-      .contact {
-        font-size: 0.8em;
-      }
-      nav {
-        align-items: center;
-        gap: 5px;
-      }
-      nav a {
-        padding: 8px 16px;
-        font-size: 0.85em;
-        min-width: 80px;
-        text-align: center;
-      }
-      h2 {
-        font-size: 1.3em;
-        border-left-width: 3px;
-        padding-left: 10px;
-      }
-      .info-card {
-        padding: 15px;
-      }
-      ul li {
-        font-size: 0.9em;
-        padding-left: 15px;
-      }
-      #chat-window {
-        height: 280px;
-      }
-    }
-
-    /* Landscape orientation for small screens */
-    @media (max-height: 500px) and (orientation: landscape) {
-      header {
-        padding: 30px 15px;
-      }
-      header h1 {
-        font-size: 1.8em;
-      }
-      .container {
-        margin: 15px auto;
-      }
-      section {
-        margin-bottom: 30px;
-      }
-      #chat-window {
-        height: 250px;
-      }
-    }
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
   <header>
     <h1>Deity Basumatary</h1>
     <p>Physics Enthusiast | Researcher | Educator</p>
@@ -303,7 +194,7 @@
     </div>
   </header>
 
-  <nav>
+    <nav>
     <a href="#research">Research</a>
     <a href="#education">Education</a>
     <a href="#thesis">Thesis</a>
@@ -450,5 +341,32 @@
   }
 </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#0a9396" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#0a9396",
+          opacity: 0.3,
+          width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>
