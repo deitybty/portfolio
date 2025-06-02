@@ -21,34 +21,46 @@
     header {
       background: #005f73;
       color: white;
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
     header h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 10px;
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       opacity: 0.9;
+      margin-bottom: 15px;
+    }
+    .contact {
+      margin-top: 15px;
+      font-size: 0.9em;
+      word-break: break-word;
+    }
+    .contact a {
+      color: #e9d8a6;
+      text-decoration: none;
     }
     nav {
       background: #0a9396;
-      padding: 10px 0;
+      padding: 15px 10px;
       position: sticky;
       top: 0;
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      padding: 8px 16px;
+      padding: 8px 12px;
       border-radius: 4px;
       transition: background 0.3s;
+      font-size: 0.9em;
     }
     nav a:hover {
       background: #94d2bd;
@@ -56,74 +68,72 @@
     }
     .container {
       max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
+      margin: 40px auto;
+      padding: 0 15px;
     }
     section {
-      margin-bottom: 100px;
+      margin-bottom: 60px;
     }
     h2 {
       color: #005f73;
-      font-size: 2em;
+      font-size: 1.6em;
       border-left: 5px solid #0a9396;
       padding-left: 15px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     ul {
       list-style: none;
       padding-left: 0;
     }
+    ul li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
     ul li::before {
       content: "\2022";
       color: #0a9396;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
     .info-card {
       background: #ffffff;
-      padding: 30px;
+      padding: 25px;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
-    .contact {
-      margin-top: 15px;
-      font-size: 0.95em;
-    }
-    .contact a {
-      color: #e9d8a6;
-      text-decoration: none;
-    }
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
       background: #005f73;
       color: white;
-      font-size: 0.95em;
+      font-size: 0.9em;
     }
 
     /* Floating Chatbot UI */
     #chat-button {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 20px;
+      right: 20px;
       background-color: #0a9396;
       color: white;
       border: none;
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
+      width: 55px;
+      height: 55px;
+      font-size: 20px;
       cursor: pointer;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       z-index: 9999;
     }
     #chat-window {
       position: fixed;
-      bottom: 100px;
-      right: 25px;
-      width: 300px;
-      height: 400px;
+      bottom: 85px;
+      right: 15px;
+      width: calc(100vw - 30px);
+      max-width: 320px;
+      height: 350px;
       background: white;
       border: 1px solid #ccc;
       border-radius: 12px;
@@ -136,13 +146,14 @@
     #chat-header {
       background-color: #005f73;
       color: white;
-      padding: 10px;
+      padding: 12px;
       font-weight: bold;
+      font-size: 0.9em;
     }
     #chat-body {
       flex: 1;
-      padding: 10px;
-      font-size: 0.9em;
+      padding: 15px;
+      font-size: 0.85em;
       overflow-y: auto;
     }
     #chat-input {
@@ -151,15 +162,135 @@
     }
     #chat-input input {
       flex: 1;
-      padding: 8px;
+      padding: 10px;
       border: none;
+      font-size: 0.9em;
     }
     #chat-input button {
       background: #0a9396;
       color: white;
       border: none;
-      padding: 8px 12px;
+      padding: 10px 15px;
       cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 15px;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .contact {
+        font-size: 0.85em;
+        line-height: 1.6;
+      }
+      nav {
+        padding: 10px 5px;
+        gap: 8px;
+      }
+      nav a {
+        padding: 6px 10px;
+        font-size: 0.8em;
+      }
+      .container {
+        margin: 20px auto;
+        padding: 0 10px;
+      }
+      section {
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-size: 1.4em;
+        padding-left: 12px;
+        margin-bottom: 15px;
+      }
+      .info-card {
+        padding: 20px;
+      }
+      ul li {
+        font-size: 0.95em;
+        margin-bottom: 6px;
+      }
+      footer {
+        padding: 25px 15px;
+        font-size: 0.85em;
+      }
+      #chat-button {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+      }
+      #chat-window {
+        bottom: 75px;
+        right: 10px;
+        width: calc(100vw - 20px);
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      header p {
+        font-size: 0.95em;
+      }
+      .contact {
+        font-size: 0.8em;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+      nav a {
+        padding: 8px 16px;
+        font-size: 0.85em;
+        min-width: 80px;
+        text-align: center;
+      }
+      h2 {
+        font-size: 1.3em;
+        border-left-width: 3px;
+        padding-left: 10px;
+      }
+      .info-card {
+        padding: 15px;
+      }
+      ul li {
+        font-size: 0.9em;
+        padding-left: 15px;
+      }
+      #chat-window {
+        height: 280px;
+      }
+    }
+
+    /* Landscape orientation for small screens */
+    @media (max-height: 500px) and (orientation: landscape) {
+      header {
+        padding: 30px 15px;
+      }
+      header h1 {
+        font-size: 1.8em;
+      }
+      .container {
+        margin: 15px auto;
+      }
+      section {
+        margin-bottom: 30px;
+      }
+      #chat-window {
+        height: 250px;
+      }
     }
   </style>
 </head>
@@ -168,7 +299,8 @@
     <h1>Deity Basumatary</h1>
     <p>Physics Enthusiast | Researcher | Educator</p>
     <div class="contact">
-      📞 +91 9101363121 | ✉️ <a href="mailto:deitybasumatary2000@gmail.com">deitybasumatary2000@gmail.com</a>
+      📞 +91 9101363121<br>
+      ✉️ <a href="mailto:deitybasumatary2000@gmail.com">deitybasumatary2000@gmail.com</a>
     </div>
   </header>
 
@@ -198,7 +330,7 @@
       <ul>
         <li>M.Sc in Physics, Cotton University – 8.5 GPA</li>
         <li>B.Sc in Physics, Cotton University – 6.1 GPA</li>
-        <li>St. Mary’s HSS – 79% (Science)</li>
+        <li>St. Mary's HSS – 79% (Science)</li>
       </ul>
     </section>
 
