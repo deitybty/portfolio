@@ -404,8 +404,44 @@
   <script>
     const chatButton = document.getElementById('chat-button');
     const chatWindow = document.getElementById('chat-window');
+    const chatBody = document.getElementById('chat-body');
+    const input = document.querySelector('#chat-input input');
+    const sendBtn = document.querySelector('#chat-input button');
+
     chatButton.onclick = () => {
       chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+      chatWindow.style.flexDirection = 'column';
+    };
+
+    sendBtn.onclick = async () => {
+      const userMsg = input.value.trim();
+      if (!userMsg) return;
+
+      // Display user message
+      const userBubble = document.createElement('div');
+      userBubble.textContent = '🧑: ' + userMsg;
+      chatBody.appendChild(userBubble);
+      input.value = '';
+
+      // Call Mistral API through backend
+      try {
+        const res = await fetch('https://portfoliobackend-cjxr.onrender.com/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: userMsg })
+        });
+        const data = await res.json();
+        const botReply = data.reply;
+
+        const botBubble = document.createElement('div');
+        botBubble.textContent = '🤖: ' + botReply;
+        chatBody.appendChild(botBubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      } catch (err) {
+        const errorBubble = document.createElement('div');
+        errorBubble.textContent = '⚠️ Error contacting AI bot.';
+        chatBody.appendChild(errorBubble);
+      }
     };
   </script>
 </body>
