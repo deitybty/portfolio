@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deity Basumatary | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fefcfb;
+      color: #333;
+      line-height: 1.8;
+    }
+    header {
+      background: #005f73;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+    nav {
+      background: #0a9396;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #94d2bd;
+      color: #001219;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 100px;
+    }
+    h2 {
+      color: #005f73;
+      font-size: 2em;
+      border-left: 5px solid #0a9396;
+      padding-left: 15px;
+      margin-bottom: 30px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "\2022";
+      color: #0a9396;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .info-card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+    .contact {
+      margin-top: 15px;
+      font-size: 0.95em;
+    }
+    .contact a {
+      color: #e9d8a6;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #005f73;
+      color: white;
+      font-size: 0.95em;
+    }
+
+    /* Floating Chatbot UI */
+    #chat-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #0a9396;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+    #chat-window {
+      position: fixed;
+      bottom: 100px;
+      right: 25px;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 9998;
+    }
+    #chat-header {
+      background-color: #005f73;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+    #chat-body {
+      flex: 1;
+      padding: 10px;
+      font-size: 0.9em;
+      overflow-y: auto;
+    }
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #chat-input input {
+      flex: 1;
+      padding: 8px;
+      border: none;
+    }
+    #chat-input button {
+      background: #0a9396;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Deity Basumatary</h1>
+    <p>Physics Enthusiast | Researcher | Educator</p>
+    <div class="contact">
+      📞 +91 9101363121 | ✉️ <a href="mailto:deitybasumatary2000@gmail.com">deitybasumatary2000@gmail.com</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#thesis">Thesis</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#languages">Languages</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#talks">Talks</a>
+  </nav>
+
+  <div class="container">
+    <section id="research" class="info-card">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Condensed Matter Physics</li>
+        <li>Thin Film Physics</li>
+        <li>Nano Materials</li>
+      </ul>
+    </section>
+
+    <section id="education" class="info-card">
+      <h2>Education</h2>
+      <ul>
+        <li>M.Sc in Physics, Cotton University – 8.5 GPA</li>
+        <li>B.Sc in Physics, Cotton University – 6.1 GPA</li>
+        <li>St. Mary’s HSS – 79% (Science)</li>
+      </ul>
+    </section>
+
+    <section id="thesis" class="info-card">
+      <h2>Master's Thesis</h2>
+      <p><strong>Title:</strong> Synthesis of g-C3N4-polypyrrole nanocomposite for energy storage</p>
+      <p><strong>Guide:</strong> Dr. Anup Kumar Nath, Cotton University</p>
+      <p>Studied structural and electrochemical properties of composite materials for enhanced energy storage capabilities using advanced material synthesis techniques.</p>
+    </section>
+
+    <section id="experience" class="info-card">
+      <h2>Work Experience</h2>
+      <ul>
+        <li>Lecturer at Sijou Academy (2023–Present)</li>
+        <li>Private Tutor in Mushalpur (2021–2022)</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="info-card">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python, C++</li>
+        <li>Microsoft Word, Excel, PowerPoint</li>
+        <li>Communication, Anchoring</li>
+        <li>Yoga, Dance</li>
+      </ul>
+    </section>
+
+    <section id="languages" class="info-card">
+      <h2>Languages</h2>
+      <ul>
+        <li>English – Proficient</li>
+        <li>Hindi – Proficient</li>
+        <li>Assamese – Proficient</li>
+        <li>Bodo – Native</li>
+      </ul>
+    </section>
+
+    <section id="certifications" class="info-card">
+      <h2>Certifications & Activities</h2>
+      <ul>
+        <li>IOT Workshop, IIT Kharagpur (2019)</li>
+        <li>2nd Place, Girls Cricket Team (2019)</li>
+        <li>HSLC Topper (2016)</li>
+      </ul>
+    </section>
+
+    <section id="talks" class="info-card">
+      <h2>Talks</h2>
+      <ul>
+        <li>Improving Energy Storage – Cotton University (2023)</li>
+        <li>Virtual Reality – Cotton University (2023)</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Deity Basumatary | Built with style and substance
+  </footer>
+
+  <!-- Floating Chat UI -->
+  <button id="chat-button">💬</button>
+  <div id="chat-window">
+    <div id="chat-header">Ask Me Anything</div>
+    <div id="chat-body">Hi! I'm your AI assistant. (Integration pending)</div>
+    <div id="chat-input">
+      <input type="text" placeholder="Type a message...">
+      <button>Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chatButton = document.getElementById('chat-button');
+    const chatWindow = document.getElementById('chat-window');
+    chatButton.onclick = () => {
+      chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    };
+  </script>
+</body>
+</html>
