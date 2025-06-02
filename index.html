@@ -394,7 +394,7 @@
   <button id="chat-button">💬</button>
   <div id="chat-window">
     <div id="chat-header">Ask Me Anything</div>
-    <div id="chat-body">Hi! I'm Deity's AI assistant.</div>
+    <div id="chat-body">Hi! I'm SexyPink, Deity's AI assistant.</div>
     <div id="chat-input">
       <input type="text" placeholder="Type a message...">
       <button>Send</button>
@@ -441,10 +441,10 @@
       if (!response.ok) throw new Error("Network response was not ok");
 
       const data = await response.json();
-      appendMessage("Bot", data.reply);
+      appendMessage("SexyPink", data.reply);
     } catch (error) {
       console.error(error);
-      appendMessage("Bot", "Error contacting AI bot.");
+      appendMessage("SexyPink", "Error contacting AI bot.");
     }
   }
 </script>
